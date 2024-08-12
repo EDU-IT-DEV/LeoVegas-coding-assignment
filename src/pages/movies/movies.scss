@@ -14,6 +14,8 @@
     .wrapper {
         padding: 0 6px;
         margin-bottom: 2rem;
+        max-width: 20vw;
+        margin: 0 auto;
     }
 
     .card, 
@@ -297,4 +299,23 @@
     @media (max-width: 720px) {
         background-color: transparent;
     }    
+}
+
+@mixin responsive-grid($breakpoint, $min-width) {
+    @media (max-width: $breakpoint) {
+        grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+    }
+}
+
+.movies-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    @include responsive-grid(var(--breakpoint-lg), 150px);
+    @include responsive-grid(var(--breakpoint-md), 100px);
+
+    @media (max-width: var(--breakpoint-sm)) {
+        grid-template-columns: 1fr;
+    }
 }
