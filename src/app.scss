@@ -4,6 +4,13 @@
   background: linear-gradient(0deg, #1CB5E0 20%, #050b45 100%) no-repeat;
 }
 
+:root {
+  --grid-gap: 1rem;
+  --breakpoint-lg: 1200px;
+  --breakpoint-md: 992px;
+  --breakpoint-sm: 576px;
+}
+
 :root, 
 .App {
   text-align: center;
